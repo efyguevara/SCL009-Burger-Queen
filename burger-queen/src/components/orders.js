@@ -1,20 +1,15 @@
 import React from 'react';
 
 function Orders() {
-    return (
-        <div className="orders">
-      
-          <h1>
-         Soy una orden
+  return (
+    <div className="orders">
+
+      <h1>
+        Soy una orden
           </h1>
-        
 
-            
-          
-  
-
-        </div>
-    );
+    </div>
+  );
 
 }
 
