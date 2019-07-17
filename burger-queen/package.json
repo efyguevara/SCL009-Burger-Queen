@@ -10,6 +10,7 @@
 >>>>>>> Stashed changes
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1"
   },
   "scripts": {
@@ -43,14 +44,27 @@
     "url": "git+https://github.com/betanyeli/SCL009-Burger-Queen.git"
   },
   "keywords": [
+<<<<<<< HEAD
     "React",
     "JavaScript",
     "Firebase"
   ],
   "author": "Beta, Efy, Majo",
+=======
+    "react",
+    "library",
+    "burger-queen",
+    "JavaScript"
+  ],
+  "author": "B-F-M",
+>>>>>>> 69dad1bdf80775a33581b6f928ac057b531f6d5e
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/betanyeli/SCL009-Burger-Queen/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://betanyeli.github.io/SCL009-Burger-Queen"
+=======
+  "homepage": "https://github.com/betanyeli/SCL009-Burger-Queen#readme"
+>>>>>>> 69dad1bdf80775a33581b6f928ac057b531f6d5e
 }
