@@ -6,10 +6,9 @@ import Waitress from './waitress';
 import Kitchen from './kitchen';
 import Orders from './orders';
 
-function NavBar() {
+function Nav() {
   return (
     <>
-
       <div>
         <nav className="nav nav-pills nav-fill">
           <a className="nav-item nav-link" href="/waitress">Mesero</a>
@@ -32,4 +31,4 @@ function NavBar() {
 
 }
 
-export default NavBar;
+export default Nav;
