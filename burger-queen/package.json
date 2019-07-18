@@ -6,6 +6,7 @@
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1"
   },
   "scripts": {
@@ -39,14 +40,18 @@
     "url": "git+https://github.com/betanyeli/SCL009-Burger-Queen.git"
   },
   "keywords": [
-    "React",
-    "JavaScript",
-    "Firebase"
+
+    "react",
+    "library",
+    "burger-queen",
+    "JavaScript"
   ],
-  "author": "Beta, Efy, Majo",
+  "author": "B-F-M",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/betanyeli/SCL009-Burger-Queen/issues"
   },
+
   "homepage": "https://betanyeli.github.io/SCL009-Burger-Queen"
+
 }
