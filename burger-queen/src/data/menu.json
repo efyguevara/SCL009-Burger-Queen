@@ -1,0 +1,92 @@
+[
+    {
+    "type":"desayuno",
+    "name": "Café americano",
+     "price": 500
+    },
+    {
+    "type":"desayuno",
+    "name": "Café con leche",
+     "price": 700
+    },
+    {
+    "type":"desayuno",
+    "name": "Sandwich de jamón y queso",
+     "price": 1000
+    },
+    {
+    "type":"desayuno",
+    "name": "Jugo natural",
+     "price": 700
+    },
+    {
+    "type":"almuerzo",
+    "name": "Hamburguesa Pollo Simple",
+    "price": 1500
+    },
+    {
+    "type":"almuerzo",
+    "name": "Hamburguesa Vacuno Simple",
+    "price": 1500
+    },
+    {
+    "type":"almuerzo",
+    "name": "Hamburguesa Vegetariana Simple",
+    "price": 1500
+    },
+    {
+    "type":"almuerzo",
+    "name": "Hamburguesa Pollo Doble",
+    "price": 2500
+    },
+    {
+    "type":"almuerzo",
+    "name": "Hamburguesa Vacuno Doble",
+    "price": 2500
+    },
+    {
+    "type":"almuerzo",
+    "name": "Hamburguesa Vegetariana Doble",
+    "price": 2500
+    },
+    {
+    "type":"agregado",
+    "name": "Huevo",
+     "price": 500
+    },
+    {
+    "type":"agregado",
+    "name": "Queso",
+     "price": 500
+    },
+    {
+    "type":"agregado",
+    "name": "Papas Fritas",
+     "price": 500
+    },
+    {
+    "type":"agregado",
+    "name": "Aros de cebolla",
+    "price": 500
+    },
+    {
+    "type":"bebidas",
+    "name": "Agua 500ml",
+     "price": 500
+    },
+    {
+    "type":"bebidas",
+    "name": "Agua 750ml",
+    "price": 800
+    },
+    {
+    "type":"bebidas",
+    "name": "Bebida 500ml",
+    "price": 700
+    },
+    {
+    "type":"bebidas",
+    "name": "Bebida 750ml",
+     "price": 1000
+    }
+ ]

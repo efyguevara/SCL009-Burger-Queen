@@ -1,27 +1,22 @@
 import React, {Component} from 'react';
 
 
+// <button onClick={this.handleClick} type="button" className="btn btn-danger"></button>
 class Button extends Component {
 
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-      }
-    
-      handleClick = () => {
-        this.props.buttonOnClick();
-        //console.log("he sido clickeado")
-      }
+handleClick = () => {
+  
+  console.log("he sido clickeado")
+}
 
     render() {
         return (
 
       
-<div className="btn" role="group" aria-label="Basic example">
+<div className="btn" >
 
-<button onClick={this.handleClick} type="button" className="btn btn-danger">Meser@</button>
-<button onClick={this.handleClick} type="button" className="btn btn-danger">Cocina</button>
-<button onClick={this.handleClick} type="button" className="btn btn-danger">Órdenes listas</button>
+<button onClick={this.handleClick} type="button" className="btn btn-danger"></button>
+
 
 </div>
 

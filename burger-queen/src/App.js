@@ -7,8 +7,9 @@ import Orders from './components/views/orders';
 // import Button from './components/elements/button';
 // <Button  buttonOnClick={ hazAlgo => console.log("He sido clickeado")}/>
 import './App.css';
-const menu = require('./data/foodOptions.json')
-console.log(menu)
+// const menu = require('./data/foodOptions.json')
+// console.log(menu)
+
 
 
 
