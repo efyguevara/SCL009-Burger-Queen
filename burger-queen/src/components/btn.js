@@ -10,35 +10,18 @@ class Btn extends React.Component {
     }
 
     render() {
-        const menuBf = ()=> {this.state.Menu.Breakfast.map((el, index) => {
-            return (
-                <ul>
-                    <li>
-                        <button type="button">
+        const menuBf = this.state.Menu.Breakfast.map((el, index) => {
+                return (
+                        <button type="button" className="btn btn-light btn-lg col-md-8">
                             <p>{el.product}</p>
-                        </button>
-                    </li>
-                </ul>
-            )
+                        </button>   
+                )
             })
-        }
-        const menuLunch = this.state.Menu.Lunch.map((el, index) => {
-            return (
-                <ul>
-                    <li>
-                        <button type="button">
-                            <p>{el.product}</p>
-                        </button>
-                    </li>
-                </ul>
-            )
-        })
         return (
             <div>
-               {menuBf}
-            </div> 
+                {menuBf}
+            </div>
         )
-        
     }
 
 }
