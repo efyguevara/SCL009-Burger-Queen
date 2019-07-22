@@ -4,3 +4,10 @@
   display: flex;
   justify-content: space-around;
 }
+.navbar{
+  display: flex;
+  justify-content: center;
+  color: white;
+ 
+
+} 

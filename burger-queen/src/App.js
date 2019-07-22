@@ -26,12 +26,7 @@ function App() {
 <Route exact path="/orders" component={Orders} />
 </Switch>
 </BrowserRouter>
-<div className="clients">
-<a href="./waitress" className="btn btn-success">Mesero</a>
-<a href="./kitchen" className="btn btn-success">Cocina</a>
-<a href="./orders" className="btn btn-success">órdenes listas</a>
 
-</div>
 
          </div>
 
