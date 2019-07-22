@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import ReactDOM from 'react-dom';
 import './components.css'
 import Waitress from './waitress';
 import Kitchen from './kitchen';
@@ -10,14 +9,14 @@ function Nav() {
   return (
     <>
       <div>
-        <nav className="nav nav-pills nav-fill">
-          <a className="nav-item nav-link" href="/waitress">Mesero</a>
-          <a className="nav-item nav-link" href="/kitchen">Cocina</a>
-          <a className="nav-item nav-link" href="/orders">Órdenes</a>
+        <nav className="nav nav-pills nav-fill navbar-dark bg-dark">
+          <a className="nav-item nav-link text-white" href="/waitress">Mesero</a>
+          <a className="nav-item nav-link text-white" href="/kitchen">Cocina</a>
+          <a className="nav-item nav-link text-white" href="/orders">Órdenes listas</a>
         </nav>
       </div>
 
-      <div className="">
+      <div>
         <BrowserRouter>
           <Switch>
             <Route exact path="/waitress" component={Waitress} />
@@ -28,7 +27,7 @@ function Nav() {
       </div>
     </>
   );
-
 }
+
 
 export default Nav;

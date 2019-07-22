@@ -1,15 +1,13 @@
-
 .App-logo{
     height: 50px;
     width: 50px;
-  }
+}
 
 .navbar{
   display: flex;
   justify-content: center;
-
 } 
 
-  h1{
+h1{
     color:white;
-  }
+}
