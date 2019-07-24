@@ -1,7 +1,7 @@
 // Dependencies
 import React, {Component} from 'react';
 import logo from '../../hamburguesa.svg'
-//import {db} from '../../firebase/firebaseInit';
+import {db} from '../../data/firebaseInit';
 //Components
 
 //import Button from '../elements/button'
@@ -45,7 +45,25 @@ const total = this.state.orders.concat([i]).reduce((prevVal, currentVal) => { re
     
 }
 
-// 
+sendClick(){
+  
+  this.setState({
+    orders: [],
+    totalPrice: 0,
+    productOrder:" ",
+  })
+  db.collection("orders").add({
+      orders:this.state.orders,
+      totalPrice: this.state.totalPrice,
+      productOrder: this.state.productOrder
+    }).then(()=>{
+      console.log("agregameeee");
+      })
+  .catch (()=>{
+      console.log("no me agregues xD");
+  })
+      
+}
   
   render() {
 const menuBreakfast = this.state.menuBf.map((element, index)=>{
@@ -74,7 +92,7 @@ Total del pedido: {this.state.totalPrice}
                         <br></br>
                         Productos: {this.state.productOrder}
                         <br></br>
-                        <button onClick={()=>this.sendClick} className="btn btn-danger">Enviar a cocina
+                        <button onClick={()=>this.sendClick()} className="btn btn-danger">Enviar a cocina
         </button>
 </div>
 
