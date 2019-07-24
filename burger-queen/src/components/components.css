@@ -1,15 +1,12 @@
+.card-img-top{
+    width: 100px;
+    height: 100px;
 
-.App-logo{
-    height: 50px;
-    width: 50px;
-  }
+}
 
-.navbar{
-  display: flex;
-  justify-content: center;
+.print-order{
+display: flex;
+justify-content: space-around;
+background-color: rgb(238, 234, 8);
+}
 
-} 
-
-  h1{
-    color:white;
-  }

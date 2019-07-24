@@ -34,13 +34,14 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "firebase": "^6.3.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/betanyeli/SCL009-Burger-Queen.git"
   },
   "keywords": [
-
     "react",
     "library",
     "burger-queen",
@@ -51,7 +52,5 @@
   "bugs": {
     "url": "https://github.com/betanyeli/SCL009-Burger-Queen/issues"
   },
-
   "homepage": "https://betanyeli.github.io/SCL009-Burger-Queen"
-
 }

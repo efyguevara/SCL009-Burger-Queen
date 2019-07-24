@@ -1,20 +1,114 @@
-import React from 'react';
+// Dependencies
+import React, {Component} from 'react';
+import logo from '../../hamburguesa.svg'
+import {db} from '../../data/firebaseInit';
+//Components
 
-function Waitress() {
-    return (
-        <div className="waitress">
+//import Button from '../elements/button'
+// assets
+import '../../components/components.css'
+
+//data
+const menuJson = require('../../data/menu.json')
+
+
+// Class components
+class Waitress extends Component {
+  constructor(){
+    super();
+    this.state = {
+      menuBf: menuJson.Breakfast,
+      orders: [],
+      totalPrice: 0,
+      productOrder:" ",
       
-          <h1>
-         Soy un mesero xD
-          </h1>
+  
+    }
+
+  }
+
+  handleClick(i) {
+    this.setState({
+        orders: this.state.orders.concat([i])
+        
+    });
+   
+const total = this.state.orders.concat([i]).reduce((prevVal, currentVal) => { return this.state.totalPrice + currentVal.price }, 0)
+  // const currentOrder = i.product
+ const currentOrder = this.state.orders.concat([i]).reduce(() => { return this.state.productOrder + " - " + i.product}, " ")
+
+    this.setState({
+        totalPrice: total,
+        productOrder: currentOrder
+
+    })
+    
+}
+
+sendClick(){
+  
+  this.setState({
+    orders: [],
+    totalPrice: 0,
+    productOrder:" ",
+  })
+  db.collection("orders").add({
+      orders:this.state.orders,
+      totalPrice: this.state.totalPrice,
+      productOrder: this.state.productOrder
+    }).then(()=>{
+      console.log("agregameeee");
+      })
+  .catch (()=>{
+      console.log("no me agregues xD");
+  })
+      
+}
+  
+  render() {
+const menuBreakfast = this.state.menuBf.map((element, index)=>{
+      
+      return (  
+      
+        <div className="card" stylename="width: 18rem;">
+  <img src={logo} className="card-img-top" alt="burger"></img>
+  <div className="card-body">
+    <h5 className="card-title">{element.product}</h5>
+    <p className="card-text">Precio : $ {element.price}</p>
+    <button onClick={()=>this.handleClick(element)} className="btn btn-danger" key={index}>Seleccionar
+        </button>
+  </div>
+</div>
+       
+
+      )
+})
+
+    return (
+      <div className="row">
+        { menuBreakfast }
+<div className="print-order">
+Total del pedido: {this.state.totalPrice} 
+                        <br></br>
+                        Productos: {this.state.productOrder}
+                        <br></br>
+                        <button onClick={()=>this.sendClick()} className="btn btn-danger">Enviar a cocina
+        </button>
+</div>
+
+ 
+        
         
 
-            
-          
-  
 
-        </div>
-    );
+     
+       
+        
+
+      </div>
+  );
+  }
+    
 
 }
 
