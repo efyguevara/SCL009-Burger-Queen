@@ -13,11 +13,11 @@ const menuJson = require('../../data/menu.json')
 
 
 // Class components
-class Waitress extends Component {
+class WaitressLunch extends Component {
   constructor(){
     super();
     this.state = {
-      menuBf: menuJson.Breakfast,
+      menuBf: menuJson.Lunch,
       orders: [],
       totalPrice: 0,
       productOrder:" ",
@@ -77,7 +77,7 @@ this.setState({
 }
   
   render() {
-const menuBreakfast = this.state.menuBf.map((element, index)=>{
+const menuLunch = this.state.menuBf.map((element, index)=>{
       
       return (  
       
@@ -109,7 +109,7 @@ const printMenu = this.state.orders.map(element=>{
 
     return (
       <div className="row">
-        { menuBreakfast }
+        { menuLunch }
 <div className="print-order">
 
 Total del pedido: {this.state.totalPrice} 
@@ -138,4 +138,4 @@ Total del pedido: {this.state.totalPrice}
 
 }
 
-export default Waitress;
+export default WaitressLunch;
