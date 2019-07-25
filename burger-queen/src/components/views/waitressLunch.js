@@ -1,10 +1,8 @@
 // Dependencies
 import React, {Component} from 'react';
-import logo from '../../hamburguesa.svg'
-import {db} from '../../data/firebaseInit';
-//Components
 
-//import Button from '../elements/button'
+import {db} from '../../data/firebaseInit';
+
 // assets
 import '../../components/components.css'
 
@@ -121,15 +119,6 @@ Total del pedido: {this.state.totalPrice}
                         <button onClick={()=>this.sendClick()} className="btn btn-danger">Enviar a cocina
         </button>
 </div>
-
- 
-        
-        
-
-
-     
-       
-        
 
       </div>
   );
