@@ -13,3 +13,4 @@
 - [x] Deleted button, not rest to `priceTotal()`
 - [ ] Add Client name to `db.collections("orders")`
 - [ ] Testing react app
+- [ ] Fix deploy
