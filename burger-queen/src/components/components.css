@@ -5,8 +5,24 @@
 }
 
 .print-order{
-display: flex;
-justify-content: space-around;
-background-color: rgb(238, 234, 8);
+    position: relative;
+    float: left;
+    padding: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
+
+.row{
+   
+    border: 2px solid rgb(185, 102, 102);
+    justify-content: center;
+     position: relative;
+     padding: 0.5em;
+     margin-left: 0.5em;
+     margin-right: 0.5em;
+     margin-top: 0.5em;
+     margin-bottom: 0.5em;
+}
