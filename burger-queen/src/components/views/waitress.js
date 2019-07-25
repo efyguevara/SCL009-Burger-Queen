@@ -27,7 +27,7 @@ class Waitress extends Component {
 
   }
 
-  handleClick(i) {
+  handleClick(i) { // select menu
     this.setState({
         orders: this.state.orders.concat([i])
         
@@ -43,9 +43,9 @@ const total = this.state.orders.concat([i]).reduce((prevVal, currentVal) => { re
 
     })
     
-}
+} // fin select menu
 
-sendClick(){
+sendClick(){ //enviar data a firestore
   
   this.setState({
     orders: [],
@@ -57,12 +57,23 @@ sendClick(){
       totalPrice: this.state.totalPrice,
       productOrder: this.state.productOrder
     }).then(()=>{
-      console.log("agregameeee");
+      alert("Sending to kitchen");
       })
   .catch (()=>{
-      console.log("no me agregues xD");
+      alert("Failed to send");
   })
       
+} // fin de sendClick
+
+deleteClick(id){
+  const orders= this.state.orders;
+  if(id === id){
+    orders.splice(id, 1);
+ }
+this.setState({
+  orders: this.state.orders,
+  totalPrice: this.state.totalPrice - this.state.orders.price,
+  })
 }
   
   render() {
@@ -70,7 +81,7 @@ const menuBreakfast = this.state.menuBf.map((element, index)=>{
       
       return (  
       
-        <div className="card" stylename="width: 18rem;">
+        <div className="card col-sm-12 col-md-4 col-lg-2 mt-4">
   <img src={logo} className="card-img-top" alt="burger"></img>
   <div className="card-body">
     <h5 className="card-title">{element.product}</h5>
@@ -84,13 +95,28 @@ const menuBreakfast = this.state.menuBf.map((element, index)=>{
       )
 })
 
+const printMenu = this.state.orders.map(element=>{
+  console.log(element)
+  return(
+<div>
+<p>{element.product} <span className="close" role="img" aria-label="sheep" onClick={() => this.deleteClick(element)}>
+      ❌
+                        </span></p>
+      
+</div>
+  )
+})
+
     return (
       <div className="row">
         { menuBreakfast }
 <div className="print-order">
+
 Total del pedido: {this.state.totalPrice} 
                         <br></br>
-                        Productos: {this.state.productOrder}
+                        Productos: 
+                     {printMenu}   
+                        
                         <br></br>
                         <button onClick={()=>this.sendClick()} className="btn btn-danger">Enviar a cocina
         </button>
