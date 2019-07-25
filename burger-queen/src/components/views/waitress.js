@@ -52,7 +52,9 @@ sendClick(){ //enviar data a firestore
     totalPrice: 0,
     productOrder:" ",
   })
-  db.collection("orders").add({
+  console.log(this.state.orders)
+  if(this.state.orders !== [{}]){
+    db.collection("orders").add({
       orders:this.state.orders,
       totalPrice: this.state.totalPrice,
       productOrder: this.state.productOrder
@@ -62,6 +64,10 @@ sendClick(){ //enviar data a firestore
   .catch (()=>{
       alert("Failed to send");
   })
+  } else {
+    alert("Debes ingresar una orden")
+  }
+  
       
 } // fin de sendClick
 
@@ -72,7 +78,7 @@ deleteClick(id){
  }
 this.setState({
   orders: this.state.orders,
-  totalPrice: this.state.totalPrice - this.state.orders.price,
+  totalPrice: this.state.totalPrice
   })
 }
   
@@ -82,11 +88,11 @@ const menuBreakfast = this.state.menuBf.map((element, index)=>{
       return (  
       
         <div className="card col-sm-12 col-md-4 col-lg-2 mt-4">
-  <img src={element.img} className="card-img-top" alt="burger"></img>
-  <div className="card-body">
-    <h5 className="card-title">{element.product}</h5>
-    <p className="card-text">Precio : $ {element.price}</p>
-    <button onClick={()=>this.handleClick(element)} className="btn btn-danger" key={index}>Seleccionar
+        <img src={element.img} className="card-img-top" alt="burger"></img>
+        <div className="card-body">
+        <h5 className="card-title">{element.product}</h5>
+        <p className="card-text">Precio : $ {element.price}</p>
+        <button onClick={()=>this.handleClick(element)} className="btn btn-danger" key={index}>Seleccionar
         </button>
   </div>
 </div>
@@ -96,20 +102,21 @@ const menuBreakfast = this.state.menuBf.map((element, index)=>{
 })
 
 const printMenu = this.state.orders.map(element=>{
-  console.log(element)
+
   return(
 <div>
 <p>{element.product} <span className="close" role="img" aria-label="sheep" onClick={() => this.deleteClick(element)}>
-      ❌
-                        </span></p>
+      ❌</span></p>
       
 </div>
   )
 })
 
     return (
-      <div className="row">
+      <div>
+ <div className="row">
         { menuBreakfast }
+        </div>
 <div className="print-order">
 
 Total del pedido: {this.state.totalPrice} 
@@ -122,16 +129,9 @@ Total del pedido: {this.state.totalPrice}
         </button>
 </div>
 
- 
-        
-        
-
-
-     
-       
-        
-
+      
       </div>
+     
   );
   }
     
