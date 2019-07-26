@@ -5,6 +5,8 @@ import {db} from '../../data/firebaseInit';
 
 // assets
 import '../../components/components.css'
+import NavBar from '../elements/navbar'
+
 
 //data
 const menuJson = require('../../data/menu.json')
@@ -63,15 +65,21 @@ sendClick(){ //enviar data a firestore
       
 } // fin de sendClick
 
-deleteClick(id){
+deleteClick(id, price) {
   const orders= this.state.orders;
-  if(id === id){
-    orders.splice(id, 1);
- }
-this.setState({
-  orders: this.state.orders,
-  totalPrice: this.state.totalPrice - this.state.orders.price,
+  // eslint-disable-next-line
+  orders.map((element, index) => {
+    // eslint-disable-next-line
+    if (orders[index] === id) {
+      delete orders[index]
+      orders.splice(index, 1)
+    }
   })
+  this.setState({
+    orders: orders,
+    totalPrice: this.state.totalPrice - price
+  })
+  
 }
   
   render() {
@@ -97,7 +105,7 @@ const printMenu = this.state.orders.map(element=>{
   console.log(element)
   return(
 <div>
-<p>{element.product} <span className="close" role="img" aria-label="sheep" onClick={() => this.deleteClick(element)}>
+<p>{element.product} <span className="close" role="img" aria-label="sheep" onClick={() => this.deleteClick(element, element.price)}>
       ❌
                         </span></p>
       
@@ -106,8 +114,11 @@ const printMenu = this.state.orders.map(element=>{
 })
 
     return (
+      <div>
+        <NavBar />
       <div className="row">
         { menuLunch }
+        </div>
 <div className="print-order">
 
 Total del pedido: {this.state.totalPrice} 
@@ -120,7 +131,9 @@ Total del pedido: {this.state.totalPrice}
         </button>
 </div>
 
+      
       </div>
+
   );
   }
     

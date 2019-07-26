@@ -1,12 +1,14 @@
 import React from 'react';
 
-import NavBar from './components/elements/navbar';
+// import NavBar from './components/elements/navbar';
+import Waitress from './components/views/waitress';
+import WaitressLunch from './components/views/waitressLunch';
+import Kitchen from './components/views/kitchen';
+import Orders from './components/views/orders';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-// import Button from './components/elements/button';
-// <Button  buttonOnClick={ hazAlgo => console.log("He sido clickeado")}/>
+
 import './App.css';
-// const menu = require('./data/foodOptions.json')
-// console.log(menu)
 
 
 
@@ -16,8 +18,16 @@ function App() {
   return (
     
       <div className="App">
-<NavBar />
-
+        {/* <NavBar /> */}
+<BrowserRouter>
+<Switch>
+<Route exact path="/" component={Waitress} />
+ <Route exact path="/waitress-breakfast" component={Waitress} />
+ <Route exact path="/waitress-lunch" component={WaitressLunch} />
+<Route exact path="/kitchen" component={Kitchen} />
+<Route exact path="/orders" component={Orders} />
+</Switch>
+</BrowserRouter>
 
 
          </div>

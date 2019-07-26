@@ -1,0 +1,24 @@
+.big-button{
+    /* Rectangle */
+ 
+    margin: 1em;
+    width: 386px;
+    height: 286px;
+    left: 107px;
+    top: 197px;
+    
+    background: rgba(229, 72, 23, 0.86);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.container-button{
+    display: flex;
+    justify-content: center;
+    margin-top:4em;
+    padding:1em;
+}
+
+h1{
+    text-align: center;
+}
