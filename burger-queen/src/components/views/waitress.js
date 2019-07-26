@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import {db} from '../../data/firebaseInit';
 //Components
 
-//import Button from '../elements/button'
+import NavBar from '../elements/navbar'
 // assets
 import '../../components/components.css'
 
@@ -68,16 +68,21 @@ sendClick(){ //enviar data a firestore
       
 } // fin de sendClick
 
-
-deleteClick(id, price){
+deleteClick(id, price) {
   const orders= this.state.orders;
-  if(id === id){
-    orders.splice(id, 1);
- }
-this.setState({
-  orders: orders,
-  totalPrice: this.state.totalPrice - price
+  // eslint-disable-next-line
+  orders.map((element, index) => {
+    // eslint-disable-next-line
+    if (orders[index] === id) {
+      delete orders[index]
+      orders.splice(index, 1)
+    }
   })
+  this.setState({
+    orders: orders,
+    totalPrice: this.state.totalPrice - price
+  })
+  
 }
 
   render() {
@@ -103,7 +108,7 @@ const printMenu = this.state.orders.map(element=>{
 
   return(
 <div>
-<p>{element.product} <span className="close" role="img" aria-label="sheep" onClick={() => this.deleteClick(element.id, element.price)}>
+<p>{element.product} <span className="close" role="img" aria-label="sheep" onClick={() => this.deleteClick(element, element.price)}>
       ❌</span></p>
       
 </div>
@@ -112,6 +117,7 @@ const printMenu = this.state.orders.map(element=>{
 
     return (
       <div>
+        <NavBar />
  <div className="row">
         { menuBreakfast }
         </div>
