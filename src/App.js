@@ -1,11 +1,11 @@
 import React from 'react';
 
 // import NavBar from './components/elements/navbar';
-// import Waitress from './components/views/waitress';
-// import WaitressLunch from './components/views/waitressLunch';
-// import Kitchen from './components/views/kitchen';
-// import Orders from './components/views/orders';
-// import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Waitress from './components/views/waitress';
+import WaitressLunch from './components/views/waitressLunch';
+import Kitchen from './components/views/kitchen';
+import Orders from './components/views/orders';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 
 import './App.css';
@@ -19,7 +19,15 @@ function App() {
     
       <div className="App">
         {/* <NavBar /> */}
-
+<BrowserRouter>
+<Switch>
+<Route exact path= {process.env.PUBLIC_URL + '/'} component={Waitress} />
+ <Route exact path={process.env.PUBLIC_URL + '/waitress-breakfast'} component={Waitress} />
+ <Route exact path={process.env.PUBLIC_URL + '/waitress-lunch'} component={WaitressLunch} />
+<Route exact path={process.env.PUBLIC_URL + '/kitchen'} component={Kitchen} />
+<Route exact path={process.env.PUBLIC_URL + '/orders'} component={Orders} />
+</Switch>
+</BrowserRouter>
 
 
          </div>

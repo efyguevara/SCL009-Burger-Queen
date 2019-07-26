@@ -2,6 +2,7 @@ import React from 'react';
 import '../../components/components.css'
 
 
+
 function NavBar() {
     return (
 
