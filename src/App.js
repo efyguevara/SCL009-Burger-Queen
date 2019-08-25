@@ -6,12 +6,7 @@ import WaitressLunch from './components/views/waitressLunch';
 import Kitchen from './components/views/kitchen';
 import Orders from './components/views/orders';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
-
 import './App.css';
-
-
-
 
 function App() {
 
